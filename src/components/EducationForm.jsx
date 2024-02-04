@@ -7,6 +7,8 @@ function EducationForm(props) {
             <legend>Educational Experience</legend>
             <label htmlFor="school-name">School Name: </label>
             <input type="text" name="school-name" id="school-name"/>
+            <label htmlFor="degree">Degree: </label>
+            <input type="text" name="degree" id="degree"/>
             <label htmlFor="study-title">Title of Study: </label>
             <input type="text" name="study-title" id="study-title"/>
             <label htmlFor="graduation-date">Graduation Date: </label>
