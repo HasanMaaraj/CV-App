@@ -3,7 +3,7 @@
 
 function EducationForm(props) {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.onSubmit} id="education-form">
             <legend>Educational Experience</legend>
             <label htmlFor="school-name">School Name: </label>
             <input type="text" name="school-name" id="school-name"/>
