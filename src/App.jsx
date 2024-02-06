@@ -1,33 +1,57 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import GeneralForm from './components/GeneralForm.jsx'
+import EducationForm from './components/EducationForm.jsx'
+import ExperienceForm from './components/ExperienceForm.jsx'
+import GeneralDisplay from './components/GeneralDisplay.jsx'
+import EducationDisplay from './components/EducationDisplay.jsx'
+import ExperienceDisplay from './components/ExperienceDisplay.jsx'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const initialGeneralInformation = {
+    name: '',
+    phone: '',
+    email: '',
+  }
+  const [generalInformation, setGeneralInformation] = useState(initialGeneralInformation)
+
+  const initialEducationInformation = {
+    'school-name': '',
+    degree: '',
+    'study-title': '',
+    'graduation-date': '',
+  }
+  const [educationInformation, setEducationInformation] = useState(initialEducationInformation)
+
+
+  const initialExperienceInformation = {
+    'company-name': '',
+    'position-title': '',
+    'starting-date': '',
+    'end-date': '',
+    description: '',
+  }
+  const [experienceInformation, setExperienceInformation] = useState(initialExperienceInformation)
+ 
+  const handleSubmit = (e, setInformation) => {
+    e.preventDefault()
+
+    setInformation(() => Object.fromEntries(new FormData(e.target)))
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="forms">
+        <GeneralForm onSubmit={(e) => handleSubmit(e, setGeneralInformation)}/>
+        <EducationForm onSubmit={(e) => handleSubmit(e, setEducationInformation)}/>
+        <ExperienceForm onSubmit={(e) => handleSubmit(e, setExperienceInformation)}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="display">
+        <GeneralDisplay info={ generalInformation } />
+        <EducationDisplay info={ educationInformation } />
+        <ExperienceDisplay info={ experienceInformation } />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
