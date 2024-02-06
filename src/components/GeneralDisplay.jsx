@@ -3,9 +3,9 @@
 function GeneralDisplay(props) {
     return (
         <div className="general-display">
-            <h1>{ props.name }</h1>
-            <span>{ props.phone }</span>
-            <span>{ props.eMail }</span>
+            <h1>{ props.info.name }</h1>
+            <span>{ props.info.phone }</span>
+            <span>{ props.info.email }</span>
         </div>
     )
 }
