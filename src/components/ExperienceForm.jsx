@@ -3,7 +3,7 @@
 
 function ExperienceForm(props) {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.onSubmit}>
             <legend>Practical Experience</legend>
             <label htmlFor="company-name">Company Name: </label>
             <input type="text" name="company-name" id="company-name"/>
