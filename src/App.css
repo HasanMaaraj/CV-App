@@ -3,40 +3,66 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.forms,
+.display {
+  background-color: lightgrey;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: .1rem .1rem .3rem black;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2rem;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+legend {
+  grid-column: 1/3;
+  margin: 1rem;
 }
 
-.card {
-  padding: 2em;
+input {
+  width: 20rem;
+  height: 1.5rem;
+  margin: 1rem;
+  border-radius: .5rem;
+  border: 1px solid lightgray;
+  outline: none;
 }
 
-.read-the-docs {
-  color: #888;
+input:focus {
+  border-color: rgb(54, 143, 199);
+  box-shadow: 0 0 .2rem rgb(54, 143, 199);
+}
+
+input:invalid {
+  border-color: rgb(199, 54, 54);
+  box-shadow: 0 0 .2rem rgb(199, 54, 54);
+}
+
+button[type="submit"] {
+  grid-column: 1/3;
+  margin: 2rem;
+}
+
+
+.general-display {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.general-display h1 {
+  grid-column: 1/3;
+}
+
+.general-display span {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
